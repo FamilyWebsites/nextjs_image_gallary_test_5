@@ -25,7 +25,7 @@ const Gallery = ({ images, repo }) => {
 export async function getStaticPaths() {
   const repos = [
     '2023-My-Birthday-Celebration-in-Office',
-    'Another-Repo' // Add more repositories as needed
+    '2023-Engagement-party' // Add more repositories as needed
   ];
 
   const paths = repos.map(repo => ({ params: { repo } }));

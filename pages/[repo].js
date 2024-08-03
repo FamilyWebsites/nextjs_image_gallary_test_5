@@ -1,17 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchImages } from '../lib/github';
 
-const Gallery = ({ repo }) => {
-  const [images, setImages] = useState([]);
-
-  useEffect(() => {
-    const getImages = async () => {
-      const images = await fetchImages(repo);
-      setImages(images);
-    };
-    getImages();
-  }, [repo]);
-
+const Gallery = ({ images, repo }) => {
   return (
     <div>
       <h1>Image Gallery for {repo}</h1>
@@ -31,10 +21,24 @@ const Gallery = ({ repo }) => {
   );
 };
 
-// Fetching the repository name from the URL
-export async function getServerSideProps(context) {
+// Fetch the list of repositories for static paths
+export async function getStaticPaths() {
+  const repos = [
+    '2023-My-Birthday-Celebration-in-Office',
+    'Another-Repo' // Add more repositories as needed
+  ];
+
+  const paths = repos.map(repo => ({ params: { repo } }));
+
+  return { paths, fallback: false };
+}
+
+// Fetch the images for the given repository
+export async function getStaticProps(context) {
   const { repo } = context.params;
-  return { props: { repo } };
+  const images = await fetchImages(repo);
+
+  return { props: { images, repo } };
 }
 
 export default Gallery;

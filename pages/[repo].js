@@ -7,19 +7,28 @@ const Gallery = ({ images, repo }) => {
       <h1>Image Gallery for {repo}</h1>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(50px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))',
         gap: '10px',
       }}>
         {images.map((image, index) => (
-          <div key={index} style={{ overflow: 'hidden', borderRadius: '8px', border: '1px solid #ddd' }}>
+          <div key={index} style={{
+            position: 'relative',
+            paddingTop: '100%', // Aspect ratio 1:1 (square)
+            overflow: 'hidden',
+            borderRadius: '8px',
+            border: '1px solid #ddd',
+          }}>
             <img
               src={image.thumbnailUrl}
               alt={`Thumbnail ${index}`}
               style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
                 width: '100%',
-                height: 'auto',
+                height: '100%',
+                objectFit: 'cover',
                 cursor: 'pointer',
-                display: 'block',
               }}
               onClick={() => window.open(image.fullUrl, '_blank')}
             />

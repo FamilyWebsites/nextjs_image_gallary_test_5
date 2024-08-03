@@ -4,7 +4,10 @@ export default function Home() {
     '2023-Engagement-party',
     '2023-Ravimamas-marriage',
     '2023-Mummy-Pappa-Marrige-Album',
-    '2023-Uttrayan'
+    '2023-Uttrayan',
+    '2023-Valentine-s-Day',
+    '2023-SGL-Late-night-working-TCS-Project',
+    '2023-Meeting-with-Ridhdhi'
   ];
 
 return (

@@ -1,7 +1,7 @@
 export default function Home() {
   const repos = [
     '2023-My-Birthday-Celebration-in-Office',
-    'Another-Repo', // Add more repository names as needed
+    '2023-Engagement-party', // Add more repository names as needed
   ];
 
   return (

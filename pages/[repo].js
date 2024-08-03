@@ -49,7 +49,10 @@ export async function getStaticPaths() {
     '2023-Uttrayan',
     '2023-Valentine-s-Day',
     '2023-SGL-Late-night-working-TCS-Project',
-    '2023-Meeting-with-Ridhdhi'
+    '2023-Meeting-with-Ridhdhi',
+    '2023-Exatra-photos-with-Aditi',
+    '2023-Push-in-boots-the-last-wish',
+    '2023-Keval-s-Tour'
   ];
 
   const paths = repos.map(repo => ({ params: { repo } }));

@@ -3,7 +3,8 @@ export default function Home() {
     '2023-My-Birthday-Celebration-in-Office',
     '2023-Engagement-party',
     '2023-Ravimamas-marriage',
-    '2023-Mummy-Pappa-Marrige-Album'
+    '2023-Mummy-Pappa-Marrige-Album',
+    '2023-Uttrayan'
   ];
 
 return (

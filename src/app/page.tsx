@@ -11,7 +11,8 @@ export default function Home() {
     '2023-Meeting-with-Ridhdhi',
     '2023-Exatra-photos-with-Aditi',
     '2023-Push-in-boots-the-last-wish',
-    '2023-Keval-s-Tour'
+    '2023-Keval-s-Tour',
+    'Shreya-s-Farwell'
   ];
 
 return (

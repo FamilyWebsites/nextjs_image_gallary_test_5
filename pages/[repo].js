@@ -54,7 +54,8 @@ export async function getStaticPaths() {
     '2023-Exatra-photos-with-Aditi',
     '2023-Push-in-boots-the-last-wish',
     '2023-Keval-s-Tour',
-    'Shreya-s-Farwell'
+    'Shreya-s-Farwell',
+    'navratri-2024'
   ];
 
   const paths = repos.map(repo => ({ params: { repo } }));

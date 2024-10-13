@@ -15,7 +15,8 @@ export default function Home() {
     'Shreya-s-Farwell',
     'navratri-2024',
     'Aditi-With-Her-Friends-Stree-2',
-    '2022-Adival-Kankupagla'
+    '2022-Adival-Kankupagla',
+    '2024-Navratri-Dashera-Mandli'
   ];
 
 return (

@@ -57,7 +57,8 @@ export async function getStaticPaths() {
     'Shreya-s-Farwell',
     'navratri-2024',
     'Aditi-With-Her-Friends-Stree-2',
-    '2022-Adival-Kankupagla'
+    '2022-Adival-Kankupagla',
+    '2024-Navratri-Dashera-Mandli'
   ];
 
   const paths = repos.map(repo => ({ params: { repo } }));

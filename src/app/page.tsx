@@ -13,7 +13,8 @@ export default function Home() {
     '2023-Push-in-boots-the-last-wish',
     '2023-Keval-s-Tour',
     'Shreya-s-Farwell',
-    'navratri-2024'
+    'navratri-2024',
+    'Aditi-With-Her-Friends-Stree-2'
   ];
 
 return (

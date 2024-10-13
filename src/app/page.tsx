@@ -16,7 +16,8 @@ export default function Home() {
     'navratri-2024',
     'Aditi-With-Her-Friends-Stree-2',
     '2022-Adival-Kankupagla',
-    '2024-Navratri-Dashera-Mandli'
+    '2024-Navratri-Dashera-Mandli',
+    '2024-Navratri-Day-8'
   ];
 
 return (

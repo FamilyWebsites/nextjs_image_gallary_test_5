@@ -14,7 +14,8 @@ export default function Home() {
     '2023-Keval-s-Tour',
     'Shreya-s-Farwell',
     'navratri-2024',
-    'Aditi-With-Her-Friends-Stree-2'
+    'Aditi-With-Her-Friends-Stree-2',
+    '2022-Adival-Kankupagla'
   ];
 
 return (

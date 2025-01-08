@@ -19,7 +19,8 @@ export default function Home() {
     '2024-Navratri-Dashera-Mandli',
     '2024-Navratri-Day-8',
     '2024-Navratri-Day-5',
-    '2024-Navratri-Day-4'
+    '2024-Navratri-Day-4',
+    'Darshna-AI'
   ];
 
 return (

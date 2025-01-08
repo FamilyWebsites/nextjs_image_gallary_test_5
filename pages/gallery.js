@@ -23,7 +23,18 @@ const Gallery = () => {
               src={image.thumbnailUrl}
               alt={`Thumbnail ${index}`}
               style={{ width: '200px', cursor: 'pointer' }}
-              onClick={() => window.open(image.fullUrl, '_blank')}
+              onClick={() => {
+                  const newWindow = window.open();
+                  newWindow.document.write(`
+                    <html>
+                      <head><title>Image Preview</title></head>
+                      <body style="margin:0;display:flex;align-items:center;justify-content:center;">
+                        <img src="${image.fullUrl}" style="max-width:100%;max-height:100%;" alt="Full Image"/>
+                      </body>
+                    </html>
+                  `);
+                  newWindow.document.close();
+                }}
             />
           </div>
         ))}

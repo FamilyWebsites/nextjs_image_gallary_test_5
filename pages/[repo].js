@@ -6,28 +6,24 @@ const Gallery = ({ images, repo }) => {
     <div>
       <h1>Image Gallery for {repo}</h1>
       <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+        display: 'flex',
+        flexWrap: 'wrap',
         gap: '10px',
       }}>
         {images.map((image, index) => (
           <div key={index} style={{
-            position: 'relative',
-            paddingTop: '100%', // Aspect ratio 1:1 (square)
-            overflow: 'hidden',
-            borderRadius: '8px',
-            border: '1px solid #ddd',
+            flex: '1 0 auto',
+            maxWidth: 'calc(100% / 4)', // Adjust based on the number of columns you want
+            margin: '10px 0',
           }}>
             <img
               src={image.thumbnailUrl}
               alt={`Thumbnail ${index}`}
               style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
                 width: '100%',
-                height: '100%',
-                objectFit: 'cover',
+                height: 'auto', // Adjust height dynamically
+                borderRadius: '8px',
+                border: '1px solid #ddd',
                 cursor: 'pointer',
               }}
               onClick={() => window.open(image.fullUrl, '_blank')}

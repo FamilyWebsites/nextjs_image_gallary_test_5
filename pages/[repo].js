@@ -32,11 +32,13 @@ const Gallery = ({ images, repo }) => {
       </div>
 
       {selectedImage && (
-        <div className={styles.imagepopup}>
-          <img src={selectedImage.fullUrl} alt={selectedImage.name} />
-          <button onClick={handleClosePopup} style={{ marginTop: '10px' }}>Close</button> {/* Close button */}
-          <a href={selectedImage.fullUrl} download={selectedImage.name} style={{ marginLeft: '10px', marginTop: '10px' }} >
-             <button>Download</button> {/* Download button */}
+        <div className={styles.imagepopup}> 
+          <div className={styles.imageContainer}> {/* Add a container for the image */}
+            <img src={selectedImage.fullUrl} alt={selectedImage.name} />
+          </div>
+          <button onClick={handleClosePopup}>Close</button>
+          <a href={selectedImage.fullUrl} download={selectedImage.name} style={{ marginLeft: '10px' }}>
+            <button>Download</button>
           </a>
         </div>
       )}

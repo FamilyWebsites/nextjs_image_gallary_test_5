@@ -16,13 +16,13 @@
 }
 
 @media (max-width:48rem) {
-    .image-gallery > div {
+    .imagegallery > div {
         columns: 2;
     }
 }
 
 @media (max-width:32rem) {
-    .image-gallery > div {
+    .imagegallery > div {
         columns: 1;
     }
 }

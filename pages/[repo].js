@@ -31,18 +31,6 @@ const Gallery = ({ images, repo }) => {
         ))}
       </div>
 
-      {selectedImage && (
-        <div className={styles.imagepopup}> 
-          <div className={styles.imageContainer}> {/* Add a container for the image */}
-            <img src={selectedImage.fullUrl} alt={selectedImage.name} />
-          </div>
-          <button onClick={handleClosePopup}>Close</button>
-          <a href={selectedImage.fullUrl} download={selectedImage.name} style={{ marginLeft: '10px' }}>
-            <button>Download</button>
-          </a>
-        </div>
-      )}
-    </section>
   );
 };
 

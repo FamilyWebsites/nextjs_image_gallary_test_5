@@ -1,8 +1,20 @@
 // components/Gallery.js
 import styles from '../src/app/Gallery.module.css';
 import { fetchImages } from '../lib/github';
+import { useState } from 'react';
 
 const Gallery = ({ images, repo }) => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageClick = (image) => {
+    setSelectedImage(image);
+  };
+
+  const handleClosePopup = () => {
+    setSelectedImage(null);
+  };
+
+
   return (
     <section className={styles.imagegallery}>
       <h2>Image Gallery for {repo}</h2>
@@ -12,11 +24,22 @@ const Gallery = ({ images, repo }) => {
             key={index}
             src={image.thumbnailUrl}
             alt={`Thumbnail ${index}`}
-            loading="lazy" // Important: Add lazy loading back
-            onClick={() => window.open(image.fullUrl, '_blank')}
+            loading="lazy"
+            onClick={() => handleImageClick(image)} // Open popup
+            style={{cursor: 'pointer'}} // Add pointer cursor
           />
         ))}
       </div>
+
+      {selectedImage && (
+        <div className={styles.imagepopup}>
+          <img src={selectedImage.fullUrl} alt={selectedImage.name} />
+          <button onClick={handleClosePopup} style={{ marginTop: '10px' }}>Close</button> {/* Close button */}
+          <a href={selectedImage.fullUrl} download={selectedImage.name} style={{ marginLeft: '10px', marginTop: '10px' }} >
+             <button>Download</button> {/* Download button */}
+          </a>
+        </div>
+      )}
     </section>
   );
 };

@@ -21,7 +21,7 @@ const Gallery = ({ images, repo }) => {
   );
 };
 
-const handleClick = (event, imageUrl) => { 
+const handleClick = (event, imageUrl) => {
   event.preventDefault(); 
 
   // Check if image URL is defined and valid (optional)

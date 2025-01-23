@@ -29,20 +29,15 @@
   }
 }
 
-.galleryImageWrapper {
-  position: relative;
+.galleryImage {
+  display: block;
   width: 100%;
-  aspect-ratio: 1/1;
-  overflow: hidden;
   border-radius: 4px;
+  margin-bottom: 1rem;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
 }
 
-.galleryImageWrapper:hover {
+.galleryImage:hover {
   transform: scale(1.05);
-}
-
-.actualGalleryImage{
-  object-fit:cover;
 }

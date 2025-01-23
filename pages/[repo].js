@@ -3,19 +3,23 @@ import { fetchImages } from '../lib/github';
 
 const Gallery = ({ images, repo }) => {
  return (
-    <div>
-      <h1>Image Gallery for {repo}</h1>
+    
+      
       <section className="image-gallery">
-        {images.map((image, index) => (
-          <img
-            src={image.thumbnailUrl}
-            alt={`Thumbnail ${index}`}
-            key={index} // Add a unique key for each image
-            onClick={() => window.open(image.fullUrl, '_blank')}
-          />
-        ))}
+       <h2>Image Gallery for {repo}</h2>
+        <div>
+         {
+          images.map((image, index) => (
+            <img
+              src={image.thumbnailUrl}
+              alt={`Thumbnail ${index}`}
+              key={index} // Add a unique key for each image
+              onClick={() => window.open(image.fullUrl, '_blank')}
+            />
+           ))
+         }
+        </div>
       </section>
-    </div>
   );
 };
 

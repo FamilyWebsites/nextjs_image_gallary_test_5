@@ -5,7 +5,7 @@ const Gallery = ({ images, repo }) => {
  return (
     
       
-      <section className="image-gallery" style={{ margin-top: 2rem; text-align: center; }} >
+      <section style={{ margin-top: 2rem, text-align: center, }} >
        <h2>Image Gallery for {repo}</h2>
         <div style={{ columns: 5;
     gap: 1.25rem;

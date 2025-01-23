@@ -21,11 +21,17 @@ const Gallery = ({ images, repo }) => {
   );
 };
 
-// Function to handle image click and open popup
 const handleClick = (event) => {
   event.preventDefault(); // Prevent default link behavior
 
   const imageUrl = event.currentTarget.href; // Get the image URL from clicked link
+
+  // Check if image URL is defined and valid (optional)
+  if (!imageUrl) {
+    console.error('Image URL is missing or invalid');
+    return;
+  }
+
   const popup = document.createElement('div'); // Create a popup element
   popup.classList.add('image-popup'); // Add a CSS class for styling
 

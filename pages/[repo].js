@@ -17,8 +17,8 @@ const Gallery = ({ images, repo }) => {
             style={{
               display: 'block',
               width: '100%',
-              borderRadius: '5px',
-              marginBottom: '1.25rem',
+              borderRadius: '1px',
+              marginBottom: '0.25rem',
             }}
             onClick={() => window.open(image.fullUrl, '_blank')}
           />

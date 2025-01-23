@@ -2,6 +2,32 @@
 import { useRouter } from 'next/router';
 import styles from '../../../src/app/Image.module.css'
 
+export async function getStaticPaths() {
+    // Generate paths for all possible image/repo combinations
+    const repos = [/* your repo list */];
+    const paths = [];
+
+    for (const repo of repos) {
+        const images = await fetchImages(repo); // Fetch image data
+        paths.push(...images.map(image => ({
+            params: { repo, image: encodeURIComponent(image.fullUrl.split('/').pop()) },
+        })));
+    }
+
+
+    return { paths, fallback: 'blocking' }; // or fallback: true
+}
+
+export async function getStaticProps(context) {
+    const { repo, image } = context.params;
+    const imageUrl = `https://raw.githubusercontent.com/${repo}/main/${decodeURIComponent(image)}`;
+
+    const fullResolutionImageUrl = imageUrl;
+    return {
+        props: { imageUrl, fullResolutionImageUrl },
+    };
+}
+
 
 const ImagePage = ({ imageUrl, fullResolutionImageUrl }) => {
     const router = useRouter();

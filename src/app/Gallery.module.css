@@ -1,5 +1,5 @@
 .imagegallery {
-    margin-top: 2rem;
+    margin-top: 1rem;
     text-align: center;
 }
 
@@ -11,8 +11,8 @@
 .imagegallery img {
     display: block;
     width: 100%;
-    border-radius: 5px;
-    margin-bottom: 1.25rem;
+    border-radius: 1px;
+    margin-bottom: 0.25rem;
 }
 
 @media (max-width:48rem) {

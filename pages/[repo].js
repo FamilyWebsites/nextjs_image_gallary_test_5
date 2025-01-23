@@ -46,7 +46,7 @@ export async function getStaticPaths() {
     '2024-Navratri-Day-8',
     '2024-Navratri-Day-5',
     '2024-Navratri-Day-4',
-    'Darshna-AI'
+    'Darshna-AI-new'
   ];
 
   const paths = repos.map(repo => ({ params: { repo } }));

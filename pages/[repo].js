@@ -1,34 +1,59 @@
 // components/Gallery.js
 import styles from '../src/app/Gallery.module.css';
 import { fetchImages } from '../lib/github';
-import { useRouter } from 'next/router'; // Import useRouter
-
 
 const Gallery = ({ images, repo }) => {
-    const router = useRouter(); // Now inside the component
-
-    const handleClick = (image) => {
-        router.push(`/image/${repo}/${encodeURIComponent(image.fullUrl.split('/').pop())}`);
-    };
-
-    return (
-        <section className={styles.imagegallery}>
-            <h2>Image Gallery for {repo}</h2>
-            <div>
-                {images.map((image, index) => (
-                    <img
-                        key={index}
-                        src={image.thumbnailUrl}
-                        alt={`Thumbnail ${index}`}
-                        loading="lazy"
-                        onClick={() => handleClick(image)}
-                    />
-                ))}
-            </div>
-        </section>
-    );
+  return (
+    <section className={styles.imagegallery}>
+      <h2>Image Gallery for {repo}</h2>
+      <div>
+        {images.map((image, index) => (
+          <img
+              key={index}
+              src={image.thumbnailUrl}
+              alt={`Thumbnail ${index}`}
+              loading="lazy" // Important: Add lazy loading back
+              onClick={(event) => handleClick(event, image.fullUrl)} 
+          />
+        ))}
+      </div>
+    </section>
+  );
 };
 
+const handleClick = (event, imageUrl) => {
+  event.preventDefault(); 
+
+  // Check if image URL is defined and valid (optional)
+  if (!imageUrl) {
+    console.error('Image URL is missing or invalid');
+    return;
+  }
+
+  const popup = document.createElement('div'); 
+  popup.classList.add('imagepopup'); 
+
+  const image = document.createElement('img'); 
+  image.src = imageUrl; 
+  image.alt = 'Full Image'; 
+
+  const closeButton = document.createElement('button'); 
+  closeButton.textContent = 'X';
+  closeButton.classList.add('close-button'); 
+  closeButton.addEventListener('click', () => popup.remove()); 
+
+  popup.appendChild(image); 
+  popup.appendChild(closeButton); 
+
+  document.body.appendChild(popup); 
+
+  // Add functionality to close popup on clicking outside the popup (optional)
+  window.addEventListener('click', (event) => {
+    if (event.target === popup) {
+      popup.remove();
+    }
+  });
+};
 
 // Fetch the list of repositories for static paths
 export async function getStaticPaths() {

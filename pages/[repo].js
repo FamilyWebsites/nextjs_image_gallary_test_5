@@ -13,6 +13,7 @@ const Gallery = ({ images, repo }) => {
             key={index}
             src={image.thumbnailUrl}
             alt={`Thumbnail ${index}`}
+            loading="lazy"
             style={{
               display: 'block',
               width: '100%',

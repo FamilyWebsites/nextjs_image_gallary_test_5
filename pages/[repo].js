@@ -51,7 +51,8 @@ export async function getStaticPaths() {
     '2024-Navratri-Day-8',
     '2024-Navratri-Day-5',
     '2024-Navratri-Day-4',
-    'Darshna-AI-new'
+    'Darshna-AI-new',
+    'manali-merriage-photos'
   ];
 
   const paths = repos.map(repo => ({ params: { repo } }));

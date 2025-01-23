@@ -1,14 +1,14 @@
-.image-gallery {
+.imagegallery {
     margin-top: 2rem;
     text-align: center;
 }
 
-.image-gallery > div {
+.imagegallery > div {
     columns: 10;
     gap: 1.25rem;
     padding-top: 1.25rem;
 }
-.image-gallery img {
+.imagegallery img {
     display: block;
     width: 100%;
     border-radius: 5px;

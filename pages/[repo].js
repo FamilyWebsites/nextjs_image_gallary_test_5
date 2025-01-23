@@ -9,7 +9,7 @@ const Gallery = ({ images, repo }) => {
         {
           images.map((image, index) => (
             <img src={image.thumbnailUrl} alt={`Thumbnail ${index}`} onClick={() => window.open(image.fullUrl, '_blank')} />
-          )
+          ))
         }
       </div>
     </div>

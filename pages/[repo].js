@@ -4,15 +4,14 @@ import { fetchImages } from '../lib/github';
 
 const Gallery = ({ images, repo }) => {
   return (
-    <section className={styles.gallerySection}>
-      <h2 className={styles.galleryTitle}>Image Gallery for {repo}</h2>
-      <div className={styles.galleryGrid}>
+    <section className={styles.image-gallery}>
+      <h2>Image Gallery for {repo}</h2>
+      <div>
         {images.map((image, index) => (
           <img
             key={index}
             src={image.thumbnailUrl}
             alt={`Thumbnail ${index}`}
-            className={styles.galleryImage}
             loading="lazy" // Important: Add lazy loading back
             onClick={() => window.open(image.fullUrl, '_blank')}
           />

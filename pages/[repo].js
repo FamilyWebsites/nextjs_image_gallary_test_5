@@ -4,7 +4,7 @@ import { fetchImages } from '../lib/github';
 
 const Gallery = ({ images, repo }) => {
   return (
-    <section className={styles.image-gallery}>
+    <section className={styles.imagegallery}>
       <h2>Image Gallery for {repo}</h2>
       <div>
         {images.map((image, index) => (

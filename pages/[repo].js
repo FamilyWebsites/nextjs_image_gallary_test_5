@@ -5,21 +5,25 @@ const Gallery = ({ images, repo }) => {
  return (
     
       
-      <section style={{ margin-top: 2rem, text-align: center, }} >
-  <h2>Image Gallery for {repo}</h2>
-  <div style={{ columns: 5; gap: 1.25rem; padding-top: 1.25rem; }}>
-    {
-      images.map((image, index) => (
-        <img style={{ display: block; width: 100%; border-radius: 5px; margin-bottom: 1.25rem; }}
-             src={image.thumbnailUrl}
-             alt={`Thumbnail ${index}`}
-             key={index} // Add a unique key for each image
-             onClick={() => window.open(image.fullUrl, '_blank')}
-        />
-      ))
-    }
-  </div>
-</section>
+      <section style={{ marginTop: '2rem', textAlign: 'center' }}>
+      <h2>Image Gallery for {repo}</h2>
+      <div style={{ columns: 5, gap: '1.25rem', paddingTop: '1.25rem' }}>
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image.thumbnailUrl}
+            alt={`Thumbnail ${index}`}
+            style={{
+              display: 'block',
+              width: '100%',
+              borderRadius: '5px',
+              marginBottom: '1.25rem',
+            }}
+            onClick={() => window.open(image.fullUrl, '_blank')}
+          />
+        ))}
+      </div>
+    </section>
   );
 };
 

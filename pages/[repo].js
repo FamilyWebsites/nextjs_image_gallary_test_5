@@ -11,7 +11,6 @@ const Gallery = ({ images, repo }) => {
             <img src={image.thumbnailUrl} alt={`Thumbnail ${index}`} onClick={() => window.open(image.fullUrl, '_blank')} />
           ))
         }
-      </div>
     </div>
   );
 };

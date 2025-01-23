@@ -1,0 +1,44 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Buttons at the top */
+    z-index: 9999;
+
+}
+
+
+.image{
+    max-width: 90%;
+    max-height: 90%;
+
+}
+
+.close,
+.download {
+    position: absolute; /* Position buttons absolutely */
+    top: 20px;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+
+}
+
+
+.close {
+    right: 20px; /* Close button on the right */
+}
+
+.download {
+    left: 20px; /* Download button on the left */
+
+}

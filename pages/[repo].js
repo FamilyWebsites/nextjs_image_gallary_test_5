@@ -22,32 +22,43 @@ const Gallery = ({ images, repo }) => {
 };
 
 const handleClick = (event, imageUrl) => {
-  event.preventDefault(); 
+  event.preventDefault();
 
-  // Check if image URL is defined and valid (optional)
   if (!imageUrl) {
     console.error('Image URL is missing or invalid');
     return;
   }
 
-  const popup = document.createElement('div'); 
-  popup.classList.add('imagepopup'); 
+  const popup = document.createElement('div');
+  popup.style.position = 'fixed';
+  popup.style.top = '50%';
+  popup.style.left = '50%';
+  popup.style.transform = 'translate(-50%, -50%)';
+  popup.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+  popup.style.borderRadius = '5px';
+  popup.style.padding = '20px';
+  popup.style.zIndex = '9999';
+  popup.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
 
-  const image = document.createElement('img'); 
-  image.src = imageUrl; 
-  image.alt = 'Full Image'; 
+  const image = document.createElement('img');
+  image.src = imageUrl;
+  image.alt = 'Full Image';
+  image.style.maxWidth = '90%';
+  image.style.maxHeight = '90%';
 
-  const closeButton = document.createElement('button'); 
+  const closeButton = document.createElement('button');
   closeButton.textContent = 'X';
-  closeButton.classList.add('close-button'); 
-  closeButton.addEventListener('click', () => popup.remove()); 
+  closeButton.style.backgroundColor = 'transparent';
+  closeButton.style.border = 'none';
+  closeButton.style.color = '#fff';
+  closeButton.style.cursor = 'pointer';
+  closeButton.addEventListener('click', () => popup.remove());
 
-  popup.appendChild(image); 
-  popup.appendChild(closeButton); 
+  popup.appendChild(image);
+  popup.appendChild(closeButton);
 
-  document.body.appendChild(popup); 
+  document.body.appendChild(popup);
 
-  // Add functionality to close popup on clicking outside the popup (optional)
   window.addEventListener('click', (event) => {
     if (event.target === popup) {
       popup.remove();

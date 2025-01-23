@@ -2,15 +2,19 @@ import { useEffect, useState } from 'react';
 import { fetchImages } from '../lib/github';
 
 const Gallery = ({ images, repo }) => {
-  return (
+ return (
     <div>
       <h1>Image Gallery for {repo}</h1>
-      <section class="image-gallery">
-        {
-          images.map((image, index) => (
-            <img src={image.thumbnailUrl} alt={`Thumbnail ${index}`} onClick={() => window.open(image.fullUrl, '_blank')} />
-          ))
-        }
+      <section className="image-gallery">
+        {images.map((image, index) => (
+          <img
+            src={image.thumbnailUrl}
+            alt={`Thumbnail ${index}`}
+            key={index} // Add a unique key for each image
+            onClick={() => window.open(image.fullUrl, '_blank')}
+          />
+        ))}
+      </section>
     </div>
   );
 };

@@ -31,7 +31,7 @@ const handleClick = (event, imageUrl) => {
   }
 
   const popup = document.createElement('div'); 
-  popup.classList.add('image-popup'); 
+  popup.classList.add('imagepopup'); 
 
   const image = document.createElement('img'); 
   image.src = imageUrl; 

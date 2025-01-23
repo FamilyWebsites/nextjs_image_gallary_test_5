@@ -1,30 +1,34 @@
 // components/Gallery.js
 import styles from '../src/app/Gallery.module.css';
 import { fetchImages } from '../lib/github';
+import { useRouter } from 'next/router'; // Import useRouter
 
-const router = useRouter();
-const handleClick = (image) => {
-    router.push(`/image/${repo}/${encodeURIComponent(image.fullUrl.split('/').pop())}`);
-};
 
 const Gallery = ({ images, repo }) => {
-  return (
-    <section className={styles.imagegallery}>
-      <h2>Image Gallery for {repo}</h2>
-      <div>
-        {images.map((image, index) => (
-          <img
-              key={index}
-              src={image.thumbnailUrl}
-              alt={`Thumbnail ${index}`}
-              loading="lazy" // Important: Add lazy loading back
-              onClick={() => handleClick(image)}
-          />
-        ))}
-      </div>
-    </section>
-  );
+    const router = useRouter(); // Now inside the component
+
+    const handleClick = (image) => {
+        router.push(`/image/${repo}/${encodeURIComponent(image.fullUrl.split('/').pop())}`);
+    };
+
+    return (
+        <section className={styles.imagegallery}>
+            <h2>Image Gallery for {repo}</h2>
+            <div>
+                {images.map((image, index) => (
+                    <img
+                        key={index}
+                        src={image.thumbnailUrl}
+                        alt={`Thumbnail ${index}`}
+                        loading="lazy"
+                        onClick={() => handleClick(image)}
+                    />
+                ))}
+            </div>
+        </section>
+    );
 };
+
 
 // Fetch the list of repositories for static paths
 export async function getStaticPaths() {

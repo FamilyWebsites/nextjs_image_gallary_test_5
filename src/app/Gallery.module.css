@@ -1,28 +1,54 @@
 .imagegallery {
-    margin-top: 1rem;
+    margin-top: 2rem;
     text-align: center;
 }
 
 .imagegallery > div {
-    columns: 10;
+    columns: 5;
     gap: 1.25rem;
     padding-top: 1.25rem;
 }
 .imagegallery img {
     display: block;
     width: 100%;
-    border-radius: 1px;
-    margin-bottom: 0.25rem;
+    border-radius: 5px;
+    margin-bottom: 1.25rem;
 }
 
 @media (max-width:48rem) {
+    .imagegallery {
+        margin-top: 1.5rem;
+        text-align: center;
+    }
+    
     .imagegallery > div {
-        columns: 2;
+        columns: 3;
+        gap: 1rem;
+        padding-top: 1rem;
+    }
+    .imagegallery img {
+        display: block;
+        width: 100%;
+        border-radius: 3px;
+        margin-bottom: 1rem;
     }
 }
 
 @media (max-width:32rem) {
+    .imagegallery {
+        margin-top: 1rem;
+        text-align: center;
+    }
+    
     .imagegallery > div {
-        columns: 1;
+        columns: 2;
+        gap: 0.5rem;
+        padding-top: 0.5rem;
+    }
+    .imagegallery img {
+        display: block;
+        width: 100%;
+        border-radius: 2px;
+        margin-bottom: 0.5rem;
     }
 }

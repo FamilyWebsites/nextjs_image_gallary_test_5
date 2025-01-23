@@ -5,31 +5,12 @@ const Gallery = ({ images, repo }) => {
   return (
     <div>
       <h1>Image Gallery for {repo}</h1>
-      <div style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '10px',
-      }}>
-        {images.map((image, index) => (
-          <div key={index} style={{
-            flex: '1 0 auto',
-            maxWidth: 'calc(100% / 4)', // Adjust based on the number of columns you want
-            margin: '10px 0',
-          }}>
-            <img
-              src={image.thumbnailUrl}
-              alt={`Thumbnail ${index}`}
-              style={{
-                width: '100%',
-                height: 'auto', // Adjust height dynamically
-                borderRadius: '8px',
-                border: '1px solid #ddd',
-                cursor: 'pointer',
-              }}
-              onClick={() => window.open(image.fullUrl, '_blank')}
-            />
-          </div>
-        ))}
+      <section class="image-gallery">
+        {
+          images.map((image, index) => (
+            <img src={image.thumbnailUrl} alt={`Thumbnail ${index}`} onClick={() => window.open(image.fullUrl, '_blank')} />
+          )
+        }
       </div>
     </div>
   );

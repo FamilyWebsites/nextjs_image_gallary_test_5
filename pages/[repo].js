@@ -2,6 +2,11 @@
 import styles from '../src/app/Gallery.module.css';
 import { fetchImages } from '../lib/github';
 
+const router = useRouter();
+const handleClick = (image) => {
+    router.push(`/image/${repo}/${encodeURIComponent(image.fullUrl.split('/').pop())}`);
+};
+
 const Gallery = ({ images, repo }) => {
   return (
     <section className={styles.imagegallery}>
@@ -13,7 +18,7 @@ const Gallery = ({ images, repo }) => {
               src={image.thumbnailUrl}
               alt={`Thumbnail ${index}`}
               loading="lazy" // Important: Add lazy loading back
-              onClick={(event) => handleClick(event, image.fullUrl)} 
+              onClick={() => handleClick(image)}
           />
         ))}
       </div>

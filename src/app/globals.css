@@ -4,7 +4,7 @@
 }
 
 .image-gallery > div {
-    columns: 10;
+    columns: 5;
     gap: 1.25rem;
     padding-top: 1.25rem;
 }
@@ -17,12 +17,12 @@
 
 @media (max-width:48rem) {
     .image-gallery > div {
-        columns: 2;
+        columns: 3;
     }
 }
 
 @media (max-width:32rem) {
     .image-gallery > div {
-        columns: 1;
+        columns: 2;
     }
 }

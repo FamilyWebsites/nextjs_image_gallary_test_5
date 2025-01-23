@@ -1,25 +1,18 @@
-import { useEffect, useState } from 'react';
+// components/Gallery.js
+import styles from '../src/app/Gallery.module.css';
 import { fetchImages } from '../lib/github';
 
 const Gallery = ({ images, repo }) => {
- return (
-    
-      
-      <section style={{ marginTop: '0.2rem', textAlign: 'center' }}>
+  return (
+    <section className={styles.imagegallery}>
       <h2>Image Gallery for {repo}</h2>
-      <div style={{ columns: 5, gap: '0.25rem', paddingTop: '0.25rem' }}>
+      <div>
         {images.map((image, index) => (
           <img
             key={index}
             src={image.thumbnailUrl}
             alt={`Thumbnail ${index}`}
-            loading="lazy"
-            style={{
-              display: 'block',
-              width: '100%',
-              borderRadius: '4px',
-              marginBottom: '0.25rem',
-            }}
+            loading="lazy" // Important: Add lazy loading back
             onClick={() => window.open(image.fullUrl, '_blank')}
           />
         ))}

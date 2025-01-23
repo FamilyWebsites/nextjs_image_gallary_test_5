@@ -5,12 +5,17 @@ const Gallery = ({ images, repo }) => {
  return (
     
       
-      <section className="image-gallery">
+      <section className="image-gallery" style={{ margin-top: 2rem; text-align: center; }} >
        <h2>Image Gallery for {repo}</h2>
-        <div>
+        <div style={{ columns: 5;
+    gap: 1.25rem;
+    padding-top: 1.25rem; }}>
          {
           images.map((image, index) => (
-            <img
+            <img style={{ display: block;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1.25rem; }}
               src={image.thumbnailUrl}
               alt={`Thumbnail ${index}`}
               key={index} // Add a unique key for each image

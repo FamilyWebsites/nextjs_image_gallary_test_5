@@ -1,5 +1,5 @@
 // components/Gallery.js
-import styles from '@/styles/Gallery.module.css';
+import styles from '../src/app/Gallery.module.css';
 import { fetchImages } from '../lib/github';
 
 const Gallery = ({ images, repo }) => {

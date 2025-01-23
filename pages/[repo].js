@@ -1,17 +1,16 @@
 // components/Gallery.js
 import styles from '../src/app/Gallery.module.css';
 import { fetchImages } from '../lib/github';
-import { useState } from 'react';
 
 const Gallery = ({ images, repo }) => {
-  const [selectedImage, setSelectedImage] = useState(null);
 
-  const handleImageClick = (image) => {
-    setSelectedImage(image);
-  };
-
-  const handleClosePopup = () => {
-    setSelectedImage(null);
+  const downloadImage = (url) => {
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = url.substring(url.lastIndexOf('/') + 1); // Extract filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
 
@@ -24,13 +23,13 @@ const Gallery = ({ images, repo }) => {
             key={index}
             src={image.thumbnailUrl}
             alt={`Thumbnail ${index}`}
-            loading="lazy"
-            onClick={() => handleImageClick(image)} // Open popup
-            style={{cursor: 'pointer'}} // Add pointer cursor
+            loading="lazy" // Important: Add lazy loading back
+            onClick={() => downloadImage(image.fullUrl)} // Download on click
+            style={{cursor: 'pointer'}} // Add pointer cursor visually
           />
         ))}
       </div>
-
+    </section>
   );
 };
 

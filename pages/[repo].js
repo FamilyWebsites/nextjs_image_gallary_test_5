@@ -5,7 +5,7 @@ const Gallery = ({ images, repo }) => {
  return (
     
       
-      <section style={{ marginTop: '2rem', textAlign: 'center' }}>
+      <section style={{ marginTop: '0.2rem', textAlign: 'center' }}>
       <h2>Image Gallery for {repo}</h2>
       <div style={{ columns: 5, gap: '0.25rem', paddingTop: '0.25rem' }}>
         {images.map((image, index) => (

@@ -9,16 +9,46 @@ const Gallery = ({ images, repo }) => {
       <div>
         {images.map((image, index) => (
           <img
-            key={index}
-            src={image.thumbnailUrl}
-            alt={`Thumbnail ${index}`}
-            loading="lazy" // Important: Add lazy loading back
-            onClick={() => window.open(image.fullUrl, '_blank')}
+              key={index}
+              src={image.thumbnailUrl}
+              alt={`Thumbnail ${index}`}
+              loading="lazy" // Important: Add lazy loading back
+              onClick={handleClick}
           />
         ))}
       </div>
     </section>
   );
+};
+
+// Function to handle image click and open popup
+const handleClick = (event) => {
+  event.preventDefault(); // Prevent default link behavior
+
+  const imageUrl = event.currentTarget.href; // Get the image URL from clicked link
+  const popup = document.createElement('div'); // Create a popup element
+  popup.classList.add('image-popup'); // Add a CSS class for styling
+
+  const image = document.createElement('img'); // Create an image element for the popup
+  image.src = imageUrl; // Set the image source
+  image.alt = 'Full Image'; // Set alt text for accessibility
+
+  const closeButton = document.createElement('button'); // Create a close button
+  closeButton.textContent = 'X';
+  closeButton.classList.add('close-button'); // Add a CSS class for styling
+  closeButton.addEventListener('click', () => popup.remove()); // Add click event listener to close popup
+
+  popup.appendChild(image); // Append image to popup
+  popup.appendChild(closeButton); // Append close button to popup
+
+  document.body.appendChild(popup); // Append popup to the body
+
+  // Add functionality to close popup on clicking outside the popup (optional)
+  window.addEventListener('click', (event) => {
+    if (event.target === popup) {
+      popup.remove();
+    }
+  });
 };
 
 // Fetch the list of repositories for static paths

@@ -1,30 +1,70 @@
-import { useEffect, useState } from 'react';
+import Image from 'next/image'; // Import the Next.js Image component
+import styled from 'styled-components';
 import { fetchImages } from '../lib/github';
 
+const GallerySection = styled.section`
+  margin-top: 2rem; /* Increased margin for better spacing */
+  text-align: center;
+`;
+
+const GalleryTitle = styled.h2`
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem; /* Increased margin for better spacing */
+`;
+
+const GalleryGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem; /* Increased gap for better spacing */
+  padding: 1rem; /* Added padding for better visual appearance */
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+`;
+
+const GalleryImageWrapper = styled.div`
+  position: relative; /* Needed for next/image fill */
+  width: 100%;
+  aspect-ratio: 1/1; /* Maintain aspect ratio */
+  overflow: hidden; /* Hide image overflow */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+
+const ActualGalleryImage = styled(Image)`
+  object-fit: cover;
+`;
+
 const Gallery = ({ images, repo }) => {
- return (
-    
-      
-      <section style={{ marginTop: '0.2rem', textAlign: 'center' }}>
-      <h2>Image Gallery for {repo}</h2>
-      <div style={{ columns: 5, gap: '0.25rem', paddingTop: '0.25rem' }}>
+  return (
+    <GallerySection>
+      <GalleryTitle>Image Gallery for {repo}</GalleryTitle>
+      <GalleryGrid>
         {images.map((image, index) => (
-          <img
-            key={index}
-            src={image.thumbnailUrl}
-            alt={`Thumbnail ${index}`}
-            loading="lazy"
-            style={{
-              display: 'block',
-              width: '100%',
-              borderRadius: '4px',
-              marginBottom: '0.25rem',
-            }}
-            onClick={() => window.open(image.fullUrl, '_blank')}
-          />
+          <GalleryImageWrapper key={index}>
+            <ActualGalleryImage
+              src={image.thumbnailUrl}
+              alt={`Thumbnail ${index}`}
+              layout="fill"
+              objectFit="cover"
+              sizes="100vw"
+              onClick={() => window.open(image.fullUrl, '_blank')}
+            />
+          </GalleryImageWrapper>
         ))}
-      </div>
-    </section>
+      </GalleryGrid>
+    </GallerySection>
   );
 };
 

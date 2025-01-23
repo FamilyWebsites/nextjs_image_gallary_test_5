@@ -13,7 +13,7 @@ const Gallery = ({ images, repo }) => {
               src={image.thumbnailUrl}
               alt={`Thumbnail ${index}`}
               loading="lazy" // Important: Add lazy loading back
-              onClick={handleClick}
+              onClick={(event) => handleClick(event, image.fullUrl)} 
           />
         ))}
       </div>
@@ -21,10 +21,8 @@ const Gallery = ({ images, repo }) => {
   );
 };
 
-const handleClick = (event) => {
-  event.preventDefault(); // Prevent default link behavior
-
-  const imageUrl = event.currentTarget.href; // Get the image URL from clicked link
+const handleClick = (event, imageUrl) => { 
+  event.preventDefault(); 
 
   // Check if image URL is defined and valid (optional)
   if (!imageUrl) {
@@ -32,22 +30,22 @@ const handleClick = (event) => {
     return;
   }
 
-  const popup = document.createElement('div'); // Create a popup element
-  popup.classList.add('image-popup'); // Add a CSS class for styling
+  const popup = document.createElement('div'); 
+  popup.classList.add('image-popup'); 
 
-  const image = document.createElement('img'); // Create an image element for the popup
-  image.src = imageUrl; // Set the image source
-  image.alt = 'Full Image'; // Set alt text for accessibility
+  const image = document.createElement('img'); 
+  image.src = imageUrl; 
+  image.alt = 'Full Image'; 
 
-  const closeButton = document.createElement('button'); // Create a close button
+  const closeButton = document.createElement('button'); 
   closeButton.textContent = 'X';
-  closeButton.classList.add('close-button'); // Add a CSS class for styling
-  closeButton.addEventListener('click', () => popup.remove()); // Add click event listener to close popup
+  closeButton.classList.add('close-button'); 
+  closeButton.addEventListener('click', () => popup.remove()); 
 
-  popup.appendChild(image); // Append image to popup
-  popup.appendChild(closeButton); // Append close button to popup
+  popup.appendChild(image); 
+  popup.appendChild(closeButton); 
 
-  document.body.appendChild(popup); // Append popup to the body
+  document.body.appendChild(popup); 
 
   // Add functionality to close popup on clicking outside the popup (optional)
   window.addEventListener('click', (event) => {

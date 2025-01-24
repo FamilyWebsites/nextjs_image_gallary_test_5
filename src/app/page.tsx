@@ -22,7 +22,8 @@ export default function Home() {
     '2024-Navratri-Day-4',
     'Darshna-AI-new',
     'manali-merriage-photos',
-    '2025-hungrito-food-fest-7.0'
+    '2025-hungrito-food-fest-7.0',
+    '2024-Merriage-photos-2'
   ];
 
 return (

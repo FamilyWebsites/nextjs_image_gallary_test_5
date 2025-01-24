@@ -11,14 +11,13 @@ const Gallery = ({ images, repo }) => {
           <a
             key={index}
             href={image.fullUrl}
-            style={{cursor: 'pointer'}} // Add pointer cursor visually
             download // This forces the download
           >
             <img
               src={image.thumbnailUrl}
               alt={`Thumbnail ${index}`}
               loading="lazy"
-              
+              style={{cursor: 'pointer'}} // Add pointer cursor visually
             />
           </a>
         ))}

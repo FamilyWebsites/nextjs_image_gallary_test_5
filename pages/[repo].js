@@ -3,30 +3,23 @@ import styles from '../src/app/Gallery.module.css';
 import { fetchImages } from '../lib/github';
 
 const Gallery = ({ images, repo }) => {
-
-  const downloadImage = (url) => {
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = url.substring(url.lastIndexOf('/') + 1); // Extract filename
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-
   return (
     <section className={styles.imagegallery}>
       <h2>Image Gallery for {repo}</h2>
       <div>
         {images.map((image, index) => (
-          <img
+          <a
             key={index}
-            src={image.thumbnailUrl}
-            alt={`Thumbnail ${index}`}
-            loading="lazy" // Important: Add lazy loading back
-            onClick={() => downloadImage(image.fullUrl)} // Download on click
-            style={{cursor: 'pointer'}} // Add pointer cursor visually
-          />
+            href={image.fullUrl}
+            download // This forces the download
+          >
+            <img
+              src={image.thumbnailUrl}
+              alt={`Thumbnail ${index}`}
+              loading="lazy"
+              style={{cursor: 'pointer'}} // Add pointer cursor visually
+            />
+          </a>
         ))}
       </div>
     </section>

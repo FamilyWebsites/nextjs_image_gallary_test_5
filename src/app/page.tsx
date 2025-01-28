@@ -23,7 +23,9 @@ export default function Home() {
     'Darshna-AI-new',
     'manali-merriage-photos',
     '2025-hungrito-food-fest-7.0',
-    '2024-Merriage-photos-2'
+    '2024-Merriage-photos-2',
+    'Binalben-na-Marriage',
+    '2025-Manjukaki-Harikaka-50th-anniversary'
   ];
 
 return (

@@ -53,7 +53,8 @@ export async function getStaticPaths() {
     'manali-merriage-photos',
     '2025-hungrito-food-fest-7.0',
     '2024-Merriage-photos-2',
-    'Binalben-na-Marriage'
+    'Binalben-na-Marriage',
+    '2025-Manjukaki-Harikaka-50th-anniversary'
   ];
 
   const paths = repos.map(repo => ({ params: { repo } }));

@@ -52,7 +52,8 @@ export async function getStaticPaths() {
     'Darshna-AI-new',
     'manali-merriage-photos',
     '2025-hungrito-food-fest-7.0',
-    '2024-Merriage-photos-2'
+    '2024-Merriage-photos-2',
+    'Binalben-na-Marriage'
   ];
 
   const paths = repos.map(repo => ({ params: { repo } }));

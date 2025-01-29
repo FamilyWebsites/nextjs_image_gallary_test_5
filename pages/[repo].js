@@ -56,7 +56,8 @@ export async function getStaticPaths() {
     'Binalben-na-Marriage',
     '2025-Manjukaki-Harikaka-50th-anniversary'
   ,
-  'test-git-1---Copy---Copy'];
+  'test-git-1---Copy---Copy',
+  'test-git-1---Copy---Copy2'];
 
   const paths = repos.map(repo => ({ params: { repo } }));
 

@@ -29,7 +29,8 @@ export default function Home() {
   'kana-no-bday',
   '2025-Heritage-walk',
   '2021-Dhaval-potrait-photos',
-  '2022-old-minecraft-thumbnails'];
+  '2022-old-minecraft-thumbnails',
+  '2024-Vasu-birthday'];
 
 return (
     <main className="flex min-h-screen flex-col items-center justify-center p-6">

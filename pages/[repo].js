@@ -58,7 +58,8 @@ export async function getStaticPaths() {
   'kana-no-bday',
   '2025-Heritage-walk',
   '2021-Dhaval-potrait-photos',
-  '2022-old-minecraft-thumbnails'];
+  '2022-old-minecraft-thumbnails',
+  '2024-Vasu-birthday'];
 
   const paths = repos.map(repo => ({ params: { repo } }));
 

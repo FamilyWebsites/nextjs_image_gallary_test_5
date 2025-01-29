@@ -28,7 +28,8 @@ export default function Home() {
     '2025-Manjukaki-Harikaka-50th-anniversary',
   'kana-no-bday',
   '2025-Heritage-walk',
-  '2021-Dhaval-potrait-photos'];
+  '2021-Dhaval-potrait-photos',
+  '2022-old-minecraft-thumbnails'];
 
 return (
     <main className="flex min-h-screen flex-col items-center justify-center p-6">

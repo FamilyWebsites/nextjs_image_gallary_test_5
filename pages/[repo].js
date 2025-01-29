@@ -57,7 +57,8 @@ export async function getStaticPaths() {
     '2025-Manjukaki-Harikaka-50th-anniversary',
   'kana-no-bday',
   '2025-Heritage-walk',
-  '2021-Dhaval-potrait-photos'];
+  '2021-Dhaval-potrait-photos',
+  '2022-old-minecraft-thumbnails'];
 
   const paths = repos.map(repo => ({ params: { repo } }));
 

@@ -30,7 +30,8 @@ export default function Home() {
   'test-git-1---Copy---Copy',
   'test-git-1---Copy---Copy2',
   'test-git-1---Copy---Copy3',
-  'test-git-1---Copy---Copy4'];
+  'test-git-1---Copy---Copy4',
+  'kana-no-bday'];
 
 return (
     <main className="flex min-h-screen flex-col items-center justify-center p-6">

@@ -56,7 +56,8 @@ export async function getStaticPaths() {
     'Binalben-na-Marriage',
     '2025-Manjukaki-Harikaka-50th-anniversary',
   'kana-no-bday',
-  '2025-Heritage-walk'];
+  '2025-Heritage-walk',
+  '2021-Dhaval-potrait-photos'];
 
   const paths = repos.map(repo => ({ params: { repo } }));
 

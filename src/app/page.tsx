@@ -28,7 +28,8 @@ export default function Home() {
     '2025-Manjukaki-Harikaka-50th-anniversary'
   ,
   'test-git-1---Copy---Copy',
-  'test-git-1---Copy---Copy2'];
+  'test-git-1---Copy---Copy2',
+  'test-git-1---Copy---Copy3'];
 
 return (
     <main className="flex min-h-screen flex-col items-center justify-center p-6">

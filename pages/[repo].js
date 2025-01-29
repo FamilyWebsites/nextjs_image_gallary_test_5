@@ -58,7 +58,8 @@ export async function getStaticPaths() {
   ,
   'test-git-1---Copy---Copy',
   'test-git-1---Copy---Copy2',
-  'test-git-1---Copy---Copy3'];
+  'test-git-1---Copy---Copy3',
+  'test-git-1---Copy---Copy4'];
 
   const paths = repos.map(repo => ({ params: { repo } }));
 

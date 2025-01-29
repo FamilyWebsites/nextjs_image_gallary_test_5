@@ -26,7 +26,8 @@ export default function Home() {
     '2024-Merriage-photos-2',
     'Binalben-na-Marriage',
     '2025-Manjukaki-Harikaka-50th-anniversary',
-  'kana-no-bday'];
+  'kana-no-bday',
+  '2025-Heritage-walk'];
 
 return (
     <main className="flex min-h-screen flex-col items-center justify-center p-6">

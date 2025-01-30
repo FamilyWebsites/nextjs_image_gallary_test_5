@@ -64,7 +64,8 @@ export async function getStaticPaths() {
   '2024-Navratri-Edited-Photos',
   '2024-Navratri-Day-9',
   '2024-Navratri-Day-6',
-  '2024-Navratri-Day-5-Original'];
+  '2024-Navratri-Day-5-Original',
+  '2024-Shreyas-birthday-and-my-first-day-at-TR'];
 
   const paths = repos.map(repo => ({ params: { repo } }));
 

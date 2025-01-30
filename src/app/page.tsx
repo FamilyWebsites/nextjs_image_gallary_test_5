@@ -34,7 +34,8 @@ export default function Home() {
   '2024-Navratri-Day-1',
   '2024-Navratri-Edited-Photos',
   '2024-Navratri-Day-9',
-  '2024-Navratri-Day-6'];
+  '2024-Navratri-Day-6',
+  '2024-Navratri-Day-5-Original'];
 
 return (
     <main className="flex min-h-screen flex-col items-center justify-center p-6">

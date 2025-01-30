@@ -32,7 +32,8 @@ export default function Home() {
   '2022-old-minecraft-thumbnails',
   '2024-Vasu-birthday',
   '2024-Navratri-Day-1',
-  '2024-Navratri-Edited-Photos'];
+  '2024-Navratri-Edited-Photos',
+  '2024-Navratri-Day-9'];
 
 return (
     <main className="flex min-h-screen flex-col items-center justify-center p-6">

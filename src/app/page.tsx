@@ -26,18 +26,19 @@ export default function Home() {
     '2024-Merriage-photos-2',
     'Binalben-na-Marriage',
     '2025-Manjukaki-Harikaka-50th-anniversary',
-  'kana-no-bday',
-  '2025-Heritage-walk',
-  '2021-Dhaval-potrait-photos',
-  '2022-old-minecraft-thumbnails',
-  '2024-Vasu-birthday',
-  '2024-Navratri-Day-1',
-  '2024-Navratri-Edited-Photos',
-  '2024-Navratri-Day-9',
-  '2024-Navratri-Day-6',
-  '2024-Navratri-Day-5-Original',
-  '2024-Shreyas-birthday-and-my-first-day-at-TR',
-  '2024-Saputara-Trip'];
+    'kana-no-bday',
+    '2025-Heritage-walk',
+    '2021-Dhaval-potrait-photos',
+    '2022-old-minecraft-thumbnails',
+    '2024-Vasu-birthday',
+    '2024-Navratri-Day-1',
+    '2024-Navratri-Edited-Photos',
+    '2024-Navratri-Day-9',
+    '2024-Navratri-Day-6',
+    '2024-Navratri-Day-5-Original',
+    '2024-Shreyas-birthday-and-my-first-day-at-TR',
+    '2024-Saputara-Trip'
+  ];
 
 return (
     <main className="flex min-h-screen flex-col items-center justify-center p-6">
